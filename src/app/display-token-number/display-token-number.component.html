@@ -1,0 +1,29 @@
+<div
+  style="display: flex; justify-content: space-evenly; flex-wrap: wrap;align-items: center; min-height: 80vh;"
+  *ngIf="true"
+>
+  <div class="counter-card" *ngFor="let counter of counters; index as i">
+    <div class="card-header">
+      <h4>{{ counter.name }}</h4>
+    </div>
+    <div class="token-number">
+      <h1 *ngIf="tokensObject[counter.id]; else t1">
+        {{ tokensObject[counter.id].tokenNumber }}
+      </h1>
+      <h4 *ngIf="tokensObject[counter.id];else t2">
+        {{ tokensObject[counter.id].customerService.name }}
+      </h4>
+      <h4 *ngIf="tokensObject[counter.id]; else t2">
+        {{ tokensObject[counter.id].customerName }}
+      </h4>
+
+      <!-- create ng template t1 -->
+      <ng-template #t1>
+        <h1>Waiting</h1>
+      </ng-template>
+      <ng-template #t2>
+        <h4>Waiting</h4>
+      </ng-template>
+    </div>
+  </div>
+</div>

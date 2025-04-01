@@ -1,0 +1,77 @@
+/* Center the login container */
+.login-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px; /* Space on all sides */
+}
+
+/* Card styling */
+.login-card {
+    width: 400px; /* Adjust width */
+    padding: 30px; /* Internal spacing */
+    border-radius: 12px;
+    margin-right: 80px;
+    padding-right: 50px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Title styling */
+.login-card h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form input styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Form label styling */
+.form-label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Button spacing */
+.btn-primary + .btn-primary {
+    margin-top: 10px;
+    margin-left: 30px;
+    
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-card {
+        width: 90%; /* Make it responsive for small screens */
+    }
+}

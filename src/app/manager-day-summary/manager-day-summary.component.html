@@ -1,0 +1,31 @@
+<app-manager-dashboard></app-manager-dashboard>
+<div class="login-container">
+    <div class="card login-card p-4">
+      <h4 class="text-center mb-4 text-primary">Day Summary</h4>
+      
+      <table class="table table-bordered">
+        <thead class="table-primary">
+          <tr>
+            <th>Token Number</th>
+            <th>Customer Name</th>
+            <th>Service Name</th>
+            <th>Count</th>
+            <th>Counter Number</th>
+            <th>Token Status</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let summary of daySummaryList">
+            <td>{{ summary.tokenNumber }}</td>
+            <td>{{ summary.customerName }}</td>
+            <td>{{ summary.customerService.name}}</td>
+            <td>{{ summary.callCount }}</td>
+            <td>{{ summary.customerService.counterId}}</td>
+            <td>{{ summary.tokenStatus}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

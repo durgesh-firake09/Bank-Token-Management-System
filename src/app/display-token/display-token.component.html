@@ -1,0 +1,35 @@
+<div class="login-container">
+  <div class="card login-card p-4">
+    <h2>Token</h2>
+    
+    <div class="token-info">
+      <div class="info-item">
+        <strong>Token Number: </strong>
+        <span>{{ state.tokenNumber }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Customer Name: </strong>
+        <span>{{ state.customerName }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Service Applied: </strong>
+        <span>{{ state.customerService.name }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Time Stamp: </strong>
+        <span>{{this.datePipe.transform(state.timestamp,'medium')}}</span>
+      </div>
+      <div class="info-item">
+        <strong>Token Status: </strong>
+        <span>{{ state.tokenStatus }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Expected Time: </strong>
+        <span>{{ state.expectedWaitTime }} Minutes</span>
+      </div>
+    </div>
+    
+    <button type="button" class="btn btn-primary" (click)="downloadToken()">Save token</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="Next()">Next</button> -->
+
+</div>

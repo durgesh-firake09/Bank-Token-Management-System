@@ -1,0 +1,26 @@
+.footer-custom {
+    background: linear-gradient(135deg, #012c58, #032649,#032649,#012c58);
+    padding: 15px 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.footer-custom p {
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer-custom a {
+    color: #bbdefb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-custom a:hover {
+    color: #ffffff;
+}

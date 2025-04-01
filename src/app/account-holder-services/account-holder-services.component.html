@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="card login-card p-4">
+    <h4 class="text-center mb-4 text-primary"></h4>
+    <form
+      [formGroup]="availableServiceForm"
+      (ngSubmit)="availableServiceSubmit()"
+    >
+      <div class="mb-3">
+        <label for="serviceId" class="form-label">Services Available:</label>
+        <select
+          id="availableService"
+          class="form-control"
+          placeholder="Select Service"
+          name="serviceId"
+          formControlName="serviceId"
+        >
+          <option value="">Select Service</option>
+          <option *ngFor="let service of customerServices" [value]="service.id">
+            {{ service.name }}
+          </option>
+
+          <!-- <option value="Account Holder">Cash Withdraw or Cash Deposit</option>
+              <option value="Account Holder">Balance enquiry of other account</option>
+              <option value="Account Holder">Fund Transaction</option>
+              <option value="Account Holder">Cheque Book</option> -->
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+  <app-alert *ngIf="showAlert" [message]="this.errMsg" [duration]="5000" [type]="this.alertType"></app-alert>
+</div>

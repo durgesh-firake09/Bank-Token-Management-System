@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="card login-card p-4">
+    <h4 class="text-center mb-4 text-primary"></h4>
+    <form [formGroup]="guestServiceForm" (ngSubmit)="guestServiceSubmit()">
+      <div class="mb-3">
+        <label for="guestService" class="form-label">Services Available:</label>
+        <select
+          id="availableService"
+          class="form-control"
+          name="serviceId"
+          formControlName="serviceId"
+        >
+          <option value="">Select Service</option>
+          <option *ngFor="let service of guestService" [value]="service.id">
+            {{ service.name }}
+          </option>
+
+          <!-- <option value="Account Holder">Open Account</option>
+              <option value="Non Account Holder">Demand Draft</option>
+              <option value="Non Account Holder">Cash Deposit</option>
+              <option value="Non Account Holder">Bill Payment</option> -->
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+  <app-alert
+    *ngIf="showAlert"
+    [message]="this.alertMessage"
+    [duration]="this.duration"
+    [type]="this.alertType"
+  ></app-alert>
+</div>

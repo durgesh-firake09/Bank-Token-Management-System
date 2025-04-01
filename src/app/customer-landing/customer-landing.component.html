@@ -1,0 +1,19 @@
+<div class="login-container">
+  <div class="card login-card p-4">
+    <h4 class="text-center mb-4 text-primary">Type of Customer</h4>
+    
+    <form [formGroup]="customerTypeForm" (ngSubmit)="customerTypeSubmit()">
+      <div class="mb-3">
+        <label for="customerType" name = "customerType " class="form-label">Type of Customer:</label>
+        <select id="customerType" class="form-control" formControlName="customerType">
+          <option value="">Select an option</option>
+          <option value="Account Holder">Account Holder</option>
+          <option value="Non Account Holder">Non Account Holder</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Continue</button>
+    </form>
+  </div>
+  <app-alert *ngIf="showAlert" [message]="this.state.error" [duration]="5000"></app-alert>
+</div>

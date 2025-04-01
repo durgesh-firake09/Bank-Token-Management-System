@@ -1,0 +1,20 @@
+<div>
+  <div class="sidebar">
+    <h4 class="text-center">Manager Panel</h4>
+    <span (click)="addService()">Add Service</span>
+    <span (click)="daySummary()">Call it a Day</span>
+    <span (click)="getAnalysis()">Day Analysis</span>
+    <span (click)="assignCounter()">Assign Counter</span>
+    <span style="font-weight: bold;">{{managerEmail}}</span>
+  </div>
+  <div class="content" style="margin-left: 250px">
+    <router-outlet></router-outlet>
+    <app-alert
+      style="margin-left: 250px"
+      *ngIf="showAlert"
+      [message]="this.alertMessage"
+      [duration]="5000"
+      [type]="this.alertType"
+    ></app-alert>
+  </div>
+</div>

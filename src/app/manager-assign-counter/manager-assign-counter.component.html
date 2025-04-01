@@ -1,0 +1,49 @@
+<app-manager-dashboard></app-manager-dashboard>
+
+<div class="login-container">
+  <div class="card login-card p-4">
+    <h4 class="text-center mb-4 text-primary">Assign Counter</h4>
+    <form [formGroup]="adminAssignCounterForm">
+      <table class="table table-bordered">
+        <thead class="table-primary">
+          <tr>
+            <th>Service Name</th>
+            <th>Counter Number</th>
+            <th>Assign Counter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of serviceList">
+            <td>{{ service.name }}</td>
+            <td>Counter {{ service.counterId }}</td>
+            <td>
+              <!-- <option  [value]="service.id">{{service.counterId}}</option> -->
+              <select
+                class="form-control"
+                (change)="assignCounterService($event,service.id)"
+                name="counter"
+              >
+                <option [value]="service.counterId" selected>
+                  Select Counter
+                </option>
+                <option
+                  *ngFor="let counter of counterList"
+                  [value]="counter.id"
+                >
+                  {{ counter.name }}
+                </option>
+              </select>
+            </td>
+            <!-- <td> -->
+            <!-- <button type = "submit" (click)="deleteService()">Delete</button> -->
+            <!-- <button type="submit" (click)="assignCounterService()">
+                Assign Counter
+              </button> -->
+            <!-- </td> -->
+          </tr>
+        </tbody>
+      </table>
+      <!-- <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button> -->
+    </form>
+  </div>
+</div>

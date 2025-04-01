@@ -1,0 +1,43 @@
+<div class="login-container">
+  <div class="card login-card p-4">
+    <h4 class="text-center mb-4 text-primary">Guest</h4>
+    <form [formGroup]="guestForm" (ngSubmit)="guestSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="name"
+          formControlName="name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Id:</label>
+        <input
+          type="text"
+          name="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile Number:</label>
+        <input
+          type="tel"
+          name="mobile"
+          class="form-control"
+          id="mobile"
+          formControlName="mobile"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+    <app-alert *ngIf="showAlert" [message]="this.errMsg" ></app-alert>
+  </div>
+</div>

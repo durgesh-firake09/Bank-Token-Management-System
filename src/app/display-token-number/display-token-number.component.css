@@ -1,0 +1,61 @@
+/* Counter Card Container */
+.counter-card {
+    /* width: 300px; */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .counter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Card Header */
+  .card-header {
+    background: #003366;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 8px 8px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Token Number Display */
+  .token-number h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #004080;
+    margin: 10px 0;
+  }
+  
+  /* Customer Service & Name */
+  .token-number h4 {
+    font-size: 16px;
+    color: #003366;
+    margin: 5px 0;
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .counter-card {
+      width: 90%;
+      margin: 10px auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .counter-card {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  

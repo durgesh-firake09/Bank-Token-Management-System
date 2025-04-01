@@ -1,0 +1,56 @@
+<div
+  class="container my-4"
+  style="height: 600px; align-items: center; margin-top: 50px"
+>
+  <!--will show first token from the pending tokens' queue with 2 buttons next and serviced -->
+  <button class="btn-secondary btn" (click)="callTokens()">Call Tokens</button>
+  <div class="row">
+    <!-- <div class="row"> -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Timer</h4>
+            </div>
+            <div class="card-body">
+              <h1 style="color: red">{{ timeLeft }}</h1>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Counter No: {{ counterId }} - {{counterEmail}}</h4>
+        </div>
+        <div class="card-body">
+          <div *ngIf="currentToken" class="content my-3 mx-2">
+            <h1>{{ currentToken.tokenNumber }}</h1>
+            <h4>{{ currentToken.customerService.name }}</h4>
+            <h4>{{ currentToken.customerName }}</h4>
+          </div>
+          <button class="btn btn-success mx-2" (click)="servicedHandler()">
+            Serviced
+          </button>
+          <button class="btn btn-primary mx-2" (click)="nextHandler()">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--will show the list of tokens that are being serviced-->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Servicing Token</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group" *ngFor="let token of pendingTokenQueue">
+            <li class="list-group-item">Token - {{ token.tokenNumber }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- timer of 2 min for customer to arrive -->
+ 
+</div>

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-custom">
+  <div class="container1">
+    <a class="navbar-brand" routerLink="/">
+      <img
+        src="./assets/logo3.png"
+        alt="Bank Logo"
+        width="50"
+        height="50"
+        class="d-inline-block align-top"
+      />
+    </a>
+    <a routerLink="/"> <span style="color: white">NextGen Payments Bank </span></a>
+
+    <div class="links-group">
+      <a
+        routerLink="/display-token-number"
+        style="color: white; margin: 20px 20px 20px 20px"
+        >Counters</a
+      >
+      <a
+        routerLink="/admin-login"
+        *ngIf="!authService.isLoggedIn()"
+        style="color: white; margin: 20px 20px 20px 20px"
+        >Login</a
+      >
+      <a
+        *ngIf="authService.isLoggedIn()"
+        routerLink="manager-dashboard"
+        style="color: white; margin: 20px 20px 20px 20px"
+        >Dashboard</a
+      >
+      <a
+        routerLink="#"
+        (click)="logout()"
+        *ngIf="authService.isLoggedIn()"
+        style="color: white; margin: 20px 20px 20px 20px"
+        >Logout</a
+      >
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,67 @@
+/* General container styling */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(to right, #002147, #004080); */
+    background-attachment: fixed;
+}
+
+/* Card styling */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+    padding: 35px;
+}
+
+/* Heading */
+h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #002147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form labels */
+.form-label {
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+}
+
+/* Input fields */
+.form-control {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #b0bec5;
+    font-size: 16px;
+    padding-left: 14px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #004080;
+    box-shadow: 0px 0px 6px rgba(0, 64, 128, 0.6);
+}
+
+/* Submit button */
+.btn-primary {
+    background-color: #004080;
+    border-color: #004080;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #002147;
+    border-color: #002147;
+    transform: scale(1.05);
+}
