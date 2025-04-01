@@ -10,7 +10,7 @@ import { ManagerAnalysisCounterwiseComponent } from "../manager-analysis-counter
 
 @Component({
   selector: 'app-manager-day-analysis',
-  imports: [CommonModule, CanvasJSAngularChartsModule, ManagerDashboardComponent, ManagerAnalysisCounterwiseComponent],
+  imports: [CommonModule, CanvasJSAngularChartsModule, ManagerAnalysisCounterwiseComponent],
   templateUrl: './manager-day-analysis.component.html',
   styleUrl: './manager-day-analysis.component.css',
 })
