@@ -22,8 +22,8 @@
 }
 
 .navbar-brand img {
-  border-radius: 50%; /* Circular logo */
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+  /* border-radius: 50%; Circular logo */
+  /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3); */
 }
 
 .navbar span {
