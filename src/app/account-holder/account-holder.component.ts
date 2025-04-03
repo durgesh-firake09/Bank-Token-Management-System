@@ -15,14 +15,16 @@ import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-account-holder',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, AlertComponent],
   templateUrl: './account-holder.component.html',
   styleUrl: './account-holder.component.css',
 })
 export class AccountHolderComponent implements OnInit {
   accountHolderForm!: FormGroup;
   state: any;
-
+  showAlert: boolean = false;
+  alertMessage: string = '';
+  alertType: string = '';
   constructor(
     private http: HttpClient,
     private fb: FormBuilder,
@@ -39,8 +41,17 @@ export class AccountHolderComponent implements OnInit {
 
   ngOnInit(): void {
     this.accountHolderForm = this.fb.group({
-      accountNumber: ['', [Validators.required]],
-      ifscCode: ['', [Validators.required]],
+      accountNumber: [
+        '',
+        [Validators.pattern(/^\d{11}$/), Validators.required],
+      ],
+      ifscCode: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[A-Z]{4}0[A-Z0-9]{5}[A-Z]{1}$/),
+        ],
+      ],
     });
   }
 
@@ -76,6 +87,12 @@ export class AccountHolderComponent implements OnInit {
         },
       });
     } else {
+      this.showAlert = true;
+      this.alertMessage = 'Please enter valid account holder details';
+      this.alertType = 'error';
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 5000);
       console.log('invalid account holder fields');
     }
   }

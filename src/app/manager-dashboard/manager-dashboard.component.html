@@ -1,11 +1,19 @@
 <div>
   <div class="sidebar">
-    <h4 class="text-center">Manager Panel</h4>
-    <span (click)="addService()">Add Service</span>
-    <span (click)="daySummary()">Call it a Day</span>
-    <span (click)="getAnalysis()">Day Analysis</span>
-    <span (click)="assignCounter()">Assign Counter</span>
-    <span style="font-weight: bold;">{{managerEmail}}</span>
+    <h4 class=""><i class="fa-solid fa-people-roof fa-lg"></i> &nbsp;Manager Panel</h4>
+    <span (click)="addService()"
+      ><i class="fa-solid fa-plus"></i> &nbsp; Add Service</span
+    >
+    <span (click)="daySummary()"
+      ><i class="fa-solid fa-list"></i> &nbsp; Call it a Day</span
+    >
+    <span (click)="getAnalysis()"
+      ><i class="fa-solid fa-chart-line"></i> &nbsp; Day Analysis</span
+    >
+    <span (click)="assignCounter()"
+      ><i class="fa-solid fa-pen-to-square"></i> &nbsp; Assign Counter</span
+    >
+    <span style="font-weight: bold">{{ managerEmail }}</span>
   </div>
   <div class="content" style="margin-left: 250px">
     <router-outlet></router-outlet>

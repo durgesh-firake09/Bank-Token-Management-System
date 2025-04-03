@@ -8,6 +8,7 @@
         <thead class="table-primary">
           <tr>
             <th>Service Name</th>
+            <th>Service Type</th>
             <th>Counter Number</th>
             <th>Assign Counter</th>
           </tr>
@@ -15,12 +16,18 @@
         <tbody>
           <tr *ngFor="let service of serviceList">
             <td>{{ service.name }}</td>
+            <td>
+              {{
+                service.serviceType.replace("_", " ").replace("_", " ")
+                  | titlecase
+              }}
+            </td>
             <td>Counter {{ service.counterId }}</td>
             <td>
               <!-- <option  [value]="service.id">{{service.counterId}}</option> -->
               <select
                 class="form-control"
-                (change)="assignCounterService($event,service.id)"
+                (change)="assignCounterService($event, service.id)"
                 name="counter"
               >
                 <option [value]="service.counterId" selected>

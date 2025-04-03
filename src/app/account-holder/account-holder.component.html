@@ -4,14 +4,16 @@
     <form [formGroup]="accountHolderForm" (ngSubmit)="accountHolderSubmit()">
       <div class="mb-3">
         <label for="accountNumber" class="form-label">Account Number:</label>
+        
         <input
-          type="text"
-          name="accountNumber"
-          class="form-control"
-          id="accountNumber"
-          formControlName="accountNumber"
-          required
+        type="text"
+        name="accountNumber"
+        class="form-control"
+        id="accountNumber"
+        formControlName="accountNumber"
+        required
         />
+        <small><i>*Should be a 11 digit number</i></small><br/>
       </div>
 
       <div class="mb-3">
@@ -24,8 +26,12 @@
           formControlName="ifscCode"
           required
         />
+        <small><i>*Should have 10 characters</i></small>
+        
       </div>
       <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>
+
   </div>
+  <app-alert [message]="alertMessage" [type]="alertType" *ngIf="showAlert"></app-alert>
 </div>

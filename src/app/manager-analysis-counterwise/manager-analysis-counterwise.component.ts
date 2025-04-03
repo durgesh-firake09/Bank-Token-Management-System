@@ -7,7 +7,7 @@ import { AdminapiServiceService } from '../services/adminapi-service.service';
 
 @Component({
   selector: 'app-manager-analysis-counterwise',
-  imports: [ManagerDashboardComponent, CanvasJSAngularChartsModule],
+  imports: [ CanvasJSAngularChartsModule],
   templateUrl: './manager-analysis-counterwise.component.html',
   styleUrl: './manager-analysis-counterwise.component.css'
 })

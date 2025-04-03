@@ -89,6 +89,15 @@
   display: block;
 } */
 
+.dropdown-content {
+  position: absolute;
+  display: flex;
+  top: 42px;
+  flex-direction: column;
+  border-radius: 7px;
+  background: #012c58;
+}
+
 /* Authentication Links */
 .auth-links {
   display: flex;
@@ -116,7 +125,8 @@
     text-align: center;
   }
 
-  .nav-links, .auth-links {
+  .nav-links,
+  .auth-links {
     flex-direction: column;
     text-align: center;
   }

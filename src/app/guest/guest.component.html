@@ -23,6 +23,12 @@
           formControlName="email"
           required
         />
+        <small
+          ><i
+            >*Please enter valid email address. The token will be recieved on
+            this email</i
+          ></small
+        >
       </div>
 
       <div class="mb-3">
@@ -38,6 +44,6 @@
       </div>
       <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>
-    <app-alert *ngIf="showAlert" [message]="this.errMsg" ></app-alert>
+    <app-alert *ngIf="showAlert" [message]="this.errMsg"></app-alert>
   </div>
 </div>

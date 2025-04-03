@@ -12,12 +12,17 @@ export class AdminapiServiceService {
   constructor(private http: HttpClient) {}
   cred = btoa('admin@gmail.com:admin');
   managerAddService(userData: any) {
-    const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + localStorage.getItem('token'),
-    });
-    return this.http.post<any>(`${this.apiUrl}/service/create`, userData, {
-      headers,
-    });
+    const headers = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      }),
+      // withCredentials: true,
+    };
+    return this.http.post<any>(
+      `${this.apiUrl}/service/create`,
+      userData,
+      headers
+    );
   }
 
   getTokenQueue(counterId: any) {
@@ -46,19 +51,27 @@ export class AdminapiServiceService {
   }
 
   getCounters() {
-    const headers = new HttpHeaders({
-      // Authorization: 'Bearer ' + localStorage.getItem('token'),
-    });
+    const headers = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      }),
+      // withCredentials: true,
+    };
 
-    return this.http.get<any>(`${this.apiUrl}/counters/all`, {
-      headers,
-    });
+    return this.http.get<any>(`${this.customerUrl}/counters/all`, headers);
   }
 
-  getCountersShow(destroy$:any) {
+  getCountersShow(destroy$: any) {
     return timer(0, 5000).pipe(
       // Poll API every 3 seconds
-      switchMap(() => this.http.get<any>(`${this.apiUrl}/counters/all`)),
+      switchMap(() =>
+        this.http.get<any>(`${this.customerUrl}/counters/all`, {
+          headers: {
+            // Authorization: 'Bearer ' + localStorage.getItem('token'),
+            'Content-Type': 'application/json',
+          },
+        })
+      ),
       takeUntil(destroy$) // Unsubscribe when destroy$ emits
     );
   }
@@ -72,7 +85,7 @@ export class AdminapiServiceService {
     });
   }
 
-  getCounterWiseAnalysis(){
+  getCounterWiseAnalysis() {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem('token'),
     });

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { AdminapiServiceService } from '../services/adminapi-service.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, TitleCasePipe } from '@angular/common';
 import { ManagerDashboardComponent } from '../manager-dashboard/manager-dashboard.component';
 import { response } from 'express';
 
@@ -19,10 +19,12 @@ import { response } from 'express';
     FormsModule,
     ReactiveFormsModule,
     ManagerDashboardComponent,
+    TitleCasePipe,
   ],
   templateUrl: './manager-assign-counter.component.html',
   styleUrl: './manager-assign-counter.component.css',
 })
+
 export class ManagerAssignCounterComponent implements OnInit {
   constructor(
     private router: RouterModule,

@@ -8,34 +8,23 @@
       <a routerLink="/business">Business</a>
       <a routerLink="/nri">NRI</a>
       <a routerLink="/priority-customer">Priority Customer</a>
-      <a routerLink="/customer">Generate Token</a>
+      <!-- <a routerLink="/customer">Generate Token</a> -->
 
-    
-
-      <!-- Generate Token Dropdown -->
-      <!-- <div class="dropdown"> -->
-        <!-- <a class="dropbtn">Generate Token ▼</a> -->
-        <!-- <div class="dropdown-content">
-          <a routerLink="/account-holder">Account Holder</a>
-          <a routerLink="/guest">Non Account Holder</a> -->
-          <!-- <form
-            [formGroup]="customerTypeForm"
-            (ngSubmit)="customerTypeSubmit()"
+      <!-- Dropdown for Generate Token -->
+      <div class="dropdown">
+        <a class="dropbtn" (click)="toggleDropdown()" style="cursor: pointer"
+          >Generate Token ▼</a
+        >
+        <div class="dropdown-content" *ngIf="isDropdownOpen">
+          <a (click)="navigateTo('account-holder')" style="cursor: pointer"
+            >Account Holder</a
           >
-            <select id="customerType" formControlName="customerType" required>
-              <option
-                type="Submit"
-                value="Account Holder"
-                (click)="customerTypeSubmit()"
-              >
-                Account Holder
-              </option>
-              <option value="Non Account Holder">Non Account Holder</option>
-            </select>
-            <button type="submit">Submit</button>
-          </form> -->
-        <!-- </div> -->
+          <a (click)="navigateTo('guest')" style="cursor: pointer"
+            >Non Account Holder</a
+          >
+        </div>
       </div>
+    </div>
     <!-- </div> -->
 
     <!-- Authentication Links -->

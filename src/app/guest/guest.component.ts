@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {
+  EmailValidator,
   FormBuilder,
   FormGroup,
   FormsModule,
@@ -10,11 +11,17 @@ import {
 } from '@angular/forms';
 import { CustomerapiServiceService } from '../services/customerapi-service.service';
 import { Router } from '@angular/router';
-import { AlertComponent } from "../alert/alert.component";
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-guest',
-  imports: [CommonModule, FormsModule, HttpClientModule, ReactiveFormsModule, AlertComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AlertComponent,
+  ],
   templateUrl: './guest.component.html',
   styleUrl: './guest.component.css',
 })
@@ -24,24 +31,20 @@ export class GuestComponent {
   showAlert: boolean = false;
   errMsg: string = '';
 
-
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private customerapiServiceService: CustomerapiServiceService
   ) {
     this.guestForm = this.fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
       name: ['', [Validators.required]],
       mobile: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
-   
     });
-    this.state = this.router.getCurrentNavigation()?.extras.state
-    if(this.state){
-
-    }
-    else{
-      this.router.navigate(['/'])
+    this.state = this.router.getCurrentNavigation()?.extras.state;
+    if (this.state) {
+    } else {
+      this.router.navigate(['/']);
     }
   }
 
@@ -58,10 +61,9 @@ export class GuestComponent {
         },
       });
       console.log('invalid account holder fields');
-    }
-    else{
+    } else {
       this.showAlert = true;
-      this.errMsg = "Please fill all the fields correctly"
+      this.errMsg = 'Please fill all the fields correctly';
       setTimeout(() => {
         this.showAlert = false;
       }, 5000);

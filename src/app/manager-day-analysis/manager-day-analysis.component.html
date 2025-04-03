@@ -1,8 +1,7 @@
-<div>
+<div style="display: flex; flex-direction: row; margin-top: 50px;">
   <canvasjs-chart
-    [options]="chartOptions"
-    [styles]="{ width: '100%', height: '360px' }"
+    [options]="chartOptions" style="width: 50%;"
   ></canvasjs-chart>
+  <app-manager-analysis-counterwise></app-manager-analysis-counterwise>
 </div>
 <!-- <button class = "button" type = "submit" (click) = "counterwiseAnalysis()">Submit</button>                 -->
-<app-manager-analysis-counterwise></app-manager-analysis-counterwise>
